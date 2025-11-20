@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            width: 48%;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            margin-top: 10px;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background: #bbb;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #restart {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #restart:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">Rock Paper Scissors</h1>
+
+    <div class="row">
+        <div class="section">
+            <h2>User</h2>
+
+            <div class="buttons">
+                <button onclick="pick('rock')">Rock</button>
+                <button onclick="pick('paper')">Paper</button>
+                <button onclick="pick('scissors')">Scissors</button>
+            </div>
+
+            <p>Your Choice: <span id="uChoice">-</span></p>
+            <p>Your Score: <span id="uScore">0</span></p>
+        </div>
+
+        <div class="section">
+            <h2>Computer</h2>
+            <p>Computer Choice: <span id="cChoice">-</span></p>
+            <p>Computer Score: <span id="cScore">0</span></p>
+        </div>
+    </div>
+
+    <div id="result">Ready to play!</div>
+
+    <div style="text-align:center;">
+        <button id="restart" onclick="resetGame()">Restart</button>
+    </div>
+
+    <script>
+        let user = 0;
+        let comp = 0;
+
+        function pick(uMove) {
+            let options = ["rock", "paper", "scissors"];
+            let cMove = options[Math.floor(Math.random() * 3)];
+
+            document.getElementById("uChoice").textContent = uMove;
+            document.getElementById("cChoice").textContent = cMove;
+
+            let output = "";
+
+            if (uMove === cMove) {
+                output = "Tie!";
+            } else if (
+                (uMove === "rock" && cMove === "scissors") ||
+                (uMove === "paper" && cMove === "rock") ||
+                (uMove === "scissors" && cMove === "paper")
+            ) {
+                user++;
+                output = "You Win!";
+            } else {
+                comp++;
+                output = "You Lose!";
+            }
+
+            document.getElementById("result").textContent = output;
+            document.getElementById("uScore").textContent = user;
+            document.getElementById("cScore").textContent = comp;
+        }
+
+        function resetGame() {
+            user = 0;
+            comp = 0;
+
+            document.getElementById("uChoice").textContent = "-";
+            document.getElementById("cChoice").textContent = "-";
+            document.getElementById("uScore").textContent = "0";
+            document.getElementById("cScore").textContent = "0";
+            document.getElementById("result").textContent = "Game reset!";
+        }
+    </script>
+
+</body>
+</html>

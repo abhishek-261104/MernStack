@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Theme Switcher Demo</title>
+    <link rel="stylesheet" href="style2.css">
+  </head>
+
+  <body>
+    <button onclick="changeTheme()">Toggle Theme</button>
+    
+    <div id="main-box">
+      <center><h2>Theme Demonstration</h2></center>
+      <p>This paragraph demonstrates the style change between themes.</p>
+    </div>
+
+    <script>
+      var isDark = false;
+
+      function changeTheme() {
+        if (isDark == false) {
+            document.body.style.backgroundColor = "#282c34";
+            document.body.style.color = "white";
+            isDark = true;
+        } else {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            isDark = false;
+        }
+      }
+    </script>
+  </body>
+</html>
