@@ -1,0 +1,43 @@
+/* PAGE STYLING */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+/* WRAPPER */
+.wrapper {
+  width: 900px;
+  margin: auto;
+}
+
+/* SMALL BOXES */
+.box {
+  width: 100px;
+  height: 100px;
+  background: #3498db;
+  float: left;
+  margin: 10px;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+/* BIG BANNER BOX */
+.big-box {
+  width: calc(100% - 20px);
+  height: 150px;
+  background: #27ae60;
+  margin: 10px;
+  float: left;
+  color: white;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}

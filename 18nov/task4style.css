@@ -1,0 +1,19 @@
+/* Light Theme */
+body.light {
+  background-color: white;
+  color: black;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #282c34;
+  color: white;
+}
+
+#main-box {
+  margin: 20px auto;
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
